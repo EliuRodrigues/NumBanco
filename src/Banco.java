@@ -4,14 +4,8 @@ public class Banco {
     public int numConta;
     protected String tipo;
     private String dono;
-    private Float saldo;
+    private float saldo;
     private boolean status;
-
-    public Banco () {
-        saldo = 0f;
-        status = false;
-    }
-
 
     //METODOS
     public void abrirConta() {
@@ -30,4 +24,24 @@ public class Banco {
 
     }
 
+    //METODOS ESPECIAS
+
+    public void numConta(){
+        this.saldo = 0;
+        this.status = false;
+    }
+    public void setNumConta(int n) {
+        this.numConta = n;
+    }
+    public int getNumConta() {
+        return numConta;
+    }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    public String getTipo (String t){
+        return t;
+    }
+
 }
+
