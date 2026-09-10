@@ -43,7 +43,7 @@ public class Banco {
         if (this.getStatus()) {
             if (this.getSaldo() >= v) {
                 this.setSaldo(this.getSaldo() - v);
-                System.out.println("saque realizado na conta de " + this.getDono);
+                System.out.println("saque realizado na conta de " + this.getDono); // ainda falta cria o get/setDono
             } else {
                 System.out.println(" saldo isuficiente para saque");
             }
