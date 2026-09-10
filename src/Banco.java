@@ -30,11 +30,26 @@ public class Banco {
         }
     }
 
-    public void depositar(){
-
+    public void depositar(float v){
+        if (this.getStatus()) {
+            this.saldo = this.saldo + v;
+            this.setSaldo(this.getSaldo() + v);
+            System.out.println("Deposito realizado na conta de " + this.getDono);
+        } else {
+            System.out.println("IMpossivel depositar em outra conta fechado!");
+        }
     }
-    public void sacar() {
-
+    public void sacar(float v) {
+        if (this.getStatus()) {
+            if (this.getSaldo() >= v) {
+                this.setSaldo(this.getSaldo() - v);
+                System.out.println("saque realizado na conta de " + this.getDono);
+            } else {
+                System.out.println(" saldo isuficiente para saque");
+            }
+        } else {
+            System.out.println("impossivel sacar de uma conta fechada");
+        }
     }
     public void pagarMensal() {
 
