@@ -8,12 +8,28 @@ public class Banco {
     private boolean status;
 
     //METODOS
-    public void abrirConta() {
-
+    public void abrirConta(String t) {
+        this.setTipo(t);
+        this.setStatus(true);
+        if (t.equals("CC")) {
+            this.setSaldo (50);
+        } else if (t.equals("CP")) {
+            this.saldo = 150;
+        }
+        System.out.println("Conta aberta com sucesso!!");
     }
+
     public void fechaConta(){
-
+        if ( this.getSaldo()  > 0 ) {
+            System.out.println("Conta tem dinheiro");
+        } else if (this.getSaldo() < 0)
+            System.out.println("Conta em débito");
+        else {
+            this.setStatus(false);
+            System.out.println("Conta fechada com sucesso");
+        }
     }
+
     public void depositar(){
 
     }
@@ -30,6 +46,11 @@ public class Banco {
         this.saldo = 0;
         this.status = false;
     }
+    private void setSaldo() {
+    }
+    private float getSaldo(int i) {
+        return saldo ;
+    }
     public void setNumConta(int n) {
         this.numConta = n;
     }
@@ -41,6 +62,12 @@ public class Banco {
     }
     public String getTipo (String t){
         return t;
+    }
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    public boolean getStatus() {
+        return status;
     }
 
 }
