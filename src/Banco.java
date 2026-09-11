@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Banco {
 
     //ATRIBUTOS
@@ -6,6 +8,15 @@ public class Banco {
     private String dono;
     private float saldo;
     private boolean status;
+//--------------METODOS PERSONALIZADOS---------------------------
+    public void estadoAtual(){
+        System.out.println("--------------------------------------");
+        System.out.println("Conta: " + getNumConta());
+        System.out.println("Tipo: " + getTipo());
+        System.out.println("Dono: " + getDono());
+        System.out.println("Saldo: " + getSaldo());
+        System.out.println("Status: " + getStatus());
+    }
 
     //METODOS
     public void abrirConta(String t) {
@@ -45,14 +56,25 @@ public class Banco {
                 this.setSaldo(this.getSaldo() - v);
                 System.out.println("saque realizado na conta de " + this.getDono);
             } else {
-                System.out.println(" saldo isuficiente para saque");
+                System.out.println(" saldo insuficiente para saque");
             }
         } else {
             System.out.println("impossivel sacar de uma conta fechada");
         }
     }
     public void pagarMensal() {
-
+        int v = 0;
+        if (this.getTipo() == "CC") {
+            v = 12;
+        } else if (this.getTipo() == "CP") {
+            v =  20;
+        }
+        if (this.getStatus()) {
+            this.setStatus(this.getStatus() - v);
+            System.out.println("Mensalidade paga com sucesso" + this.getDono);
+        }else {
+            System.out.println("Impossivel pagar uma conta fechada");
+        }
     }
 
     //METODOS ESPECIAS
