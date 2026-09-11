@@ -8,7 +8,7 @@ public class Banco {
     private String dono;
     private float saldo;
     private boolean status;
-//--------------METODOS PERSONALIZADOS---------------------------
+//-----------------METODOS PERSONALIZADOS---------------------------
     public void estadoAtual(){
         System.out.println("--------------------------------------");
         System.out.println("Conta: " + getNumConta());
@@ -18,7 +18,7 @@ public class Banco {
         System.out.println("Status: " + getStatus());
     }
 
-    //METODOS
+    //----------------------METODOS--------------------------------
     public void abrirConta(String t) {
         this.setTipo(t);
         this.setStatus(true);
@@ -45,16 +45,16 @@ public class Banco {
         if (this.getStatus()) {
             this.saldo = this.saldo + v;
             this.setSaldo(this.getSaldo() + v);
-            System.out.println("Deposito realizado na conta de " + this.getDono);
+            System.out.println("Deposito realizado na conta de " + this.getDono());
         } else {
-            System.out.println("IMpossivel depositar em outra conta fechado!");
+            System.out.println("Inpossivel depositar em outra conta fechado!");
         }
     }
     public void sacar(float v) {
         if (this.getStatus()) {
             if (this.getSaldo() >= v) {
                 this.setSaldo(this.getSaldo() - v);
-                System.out.println("saque realizado na conta de " + this.getDono);
+                System.out.println("saque realizado na conta de " + this.getDono());
             } else {
                 System.out.println(" saldo insuficiente para saque");
             }
@@ -71,41 +71,52 @@ public class Banco {
         }
         if (this.getStatus()) {
             this.setStatus(this.getStatus() - v);
-            System.out.println("Mensalidade paga com sucesso" + this.getDono);
+            System.out.println("Mensalidade paga com sucesso" + this.getDono());
         }else {
             System.out.println("Impossivel pagar uma conta fechada");
         }
     }
 
-    //METODOS ESPECIAS
+    //----------------------METODOS ESPECIAS----------------------------
 
-    public void numConta(){
-        this.saldo = 0;
-        this.status = false;
-    }
-    private void setSaldo() {
-    }
-    private float getSaldo(int i) {
-        return saldo ;
-    }
     public void setNumConta(int n) {
         this.numConta = n;
     }
+
     public int getNumConta() {
         return numConta;
     }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public String getTipo (String t){
-        return t;
+
+    public String getTipo() {
+        return tipo;
     }
+
+    public void setDono(String dono) {
+        this.dono = dono;
+    }
+
+    public String getDono() {
+        return dono;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+
     public void setStatus(boolean status) {
         this.status = status;
     }
+
     public boolean getStatus() {
         return status;
     }
 
 }
-//COMMIT TESTE
