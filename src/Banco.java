@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Objects;
 
 public class Banco {
 
@@ -64,18 +65,19 @@ public class Banco {
     }
     public void pagarMensal() {
         int v = 0;
-        if (this.getTipo() == "CC") {
+        if (Objects.equals(this.getTipo(), "CC")) {
             v = 12;
-        } else if (this.getTipo() == "CP") {
+        } else if (Objects.equals(this.getTipo(), "CP")) {
             v =  20;
         }
         if (this.getStatus()) {
-            this.setStatus(this.getStatus() - v);
+            this.setSaldo(this.getSaldo() - v);
             System.out.println("Mensalidade paga com sucesso" + this.getDono());
         }else {
             System.out.println("Impossivel pagar uma conta fechada");
         }
     }
+
 
     //----------------------METODOS ESPECIAS----------------------------
 
