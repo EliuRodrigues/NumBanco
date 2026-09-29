@@ -9,6 +9,7 @@ public class Banco {
     private String dono;
     private float saldo;
     private boolean status;
+
 //-----------------METODOS PERSONALIZADOS---------------------------
     public void estadoAtual(){
         System.out.println("--------------------------------------");

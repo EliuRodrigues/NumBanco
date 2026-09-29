@@ -4,7 +4,10 @@ public class Main {
       p1.setNumConta(1111);
       p1.setDono("jubileu");
       p1.abrirConta("CC");
-      p1.estadoAtual();
+      p1.depositar(100);
+      p1.sacar(250);
+      p1.fechaConta();
+
 
     }
 }
