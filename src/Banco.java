@@ -17,7 +17,7 @@ public class Banco {
         System.out.println("Tipo: " + getTipo());
         System.out.println("Dono: " + getDono());
         System.out.println("Saldo: " + getSaldo());
-        System.out.println("Status: " + getStatus());
+        System.out.println("Status: " + getStatus())
     }
 
     //----------------------METODOS--------------------------------
